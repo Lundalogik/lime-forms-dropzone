@@ -5,6 +5,9 @@ let getJsConfig = (minimize) => {
   return {
     entry: ["./tool/dropzone.dist.js"],
     mode: "production",
+    externals: {
+        jquery: "jQuery",
+    },
     module: {
       rules: [
         {

@@ -612,8 +612,9 @@ let defaultOptions = {
 
       if (this.options.addRemoveLinks) {
         file._removeLink = Dropzone.createElement(
-          `<a class="dz-remove" href="javascript:undefined;" data-dz-remove>${this.options.dictRemoveFile}</a>`
+          `<button class="dz-remove" href="javascript:undefined;" data-dz-remove>${this.options.dictRemoveFile}</button>`
         );
+        file._removeLink.setAttribute("aria-label", `${this.options.dictRemoveFile}: ${file.name}`);
         file.previewElement.appendChild(file._removeLink);
       }
 
